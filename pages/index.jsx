@@ -11,13 +11,13 @@ export default function Home() {
     optionSelected:[]
 })
 
-// useEffect(() => {
-//    fetch("http://localhost:8080/questions") // API link here
-//     .then((res) => res.json())
-//     .then((data) => {
-//      setData(data)
-//     })
-//   },[])
+useEffect(() => {
+   fetch("http://localhost:9999/question/show") // API link here
+    .then((res) => res.json())
+    .then((data) => {
+     setData(data)
+    })
+  },[])
 
 const handleChange = (option , question) => {
   setUserInput({...userInput , optionSelected : [...userInput.optionSelected , option] , questionSelected: [...userInput.questionSelected , question] })

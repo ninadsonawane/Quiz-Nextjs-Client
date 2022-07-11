@@ -11,25 +11,23 @@ export default function Home() {
     optionSelected:[]
 })
 
-
-useEffect(() => {
-   fetch("http://localhost:8080/questions")
-    .then((res) => res.json())
-    .then((data) => {
-     setData(data)
-    })
-  },[])
+// useEffect(() => {
+//    fetch("http://localhost:8080/questions") // API link here
+//     .then((res) => res.json())
+//     .then((data) => {
+//      setData(data)
+//     })
+//   },[])
 
 const handleChange = (option , question) => {
   setUserInput({...userInput , optionSelected : [...userInput.optionSelected , option] , questionSelected: [...userInput.questionSelected , question] })
-
  }
+
  
   return (
     <div >
       <Counter setDisable={setDisable} />
-      <div className='m-8'>
-
+      <div className='m-8'>    
                <h1 className='font-bold text-lg'>{data?.question}</h1>
                 {
                   data?.options.map((op) => {
